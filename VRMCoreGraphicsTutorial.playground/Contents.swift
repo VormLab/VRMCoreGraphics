@@ -11,7 +11,7 @@ private struct Constants {
 
 // MARK: Window configuration
 
-let bounds = CGRect(x: 0.0, y: 0.0, width: Constants.WindowWidth, height: Constants.WindowHeight)
+let bounds = CGRect(x: 0.0, y: 0.0, width: 300, height: 300)
 let window = UIView(frame: bounds)
 window.backgroundColor = .lightGrayColor()
 
@@ -40,22 +40,22 @@ window.backgroundColor = .lightGrayColor()
  */
 
 // 1. Dotted Curve with a shadow
-let aView = VRMDottedCurveWithAShadow(frame: window.frame)
+//let aView = VRMDottedCurveWithAShadow(frame: window.frame)
 
 // 2. Gradient Donut
 //let aView = VRMGradientDonut(frame: window.frame)
 
 // 3. Gradient Graph
-//let graphFrame = CGRect(origin: window.frame.origin, size: CGSize(width: window.frame.width - 60.0, height: window.frame.width - 30.0))
-//let graphView = VRMGradientGraphView(frame: graphFrame)
-//graphView.layer.cornerRadius = 16.0
-//graphView.layer.masksToBounds = true
-//graphView.layer.borderWidth = 3.0
-//graphView.layer.borderColor = UIColor.whiteColor().CGColor
-//graphView.backgroundColor = .darkGrayColor()
-//let aView = UIView(frame: window.frame)
-//aView.addSubview(graphView)
-//graphView.center = aView.center
+let graphFrame = CGRect(origin: window.frame.origin, size: CGSize(width: window.frame.width - 60.0, height: window.frame.width - 30.0))
+let graphView = VRMGradientGraphView(frame: graphFrame)
+graphView.layer.cornerRadius = 16.0
+graphView.layer.masksToBounds = true
+graphView.layer.borderWidth = 3.0
+graphView.layer.borderColor = UIColor.whiteColor().CGColor
+graphView.backgroundColor = .darkGrayColor()
+let aView = UIView(frame: window.frame)
+aView.addSubview(graphView)
+graphView.center = aView.center
 
 aView.backgroundColor = .clearColor()
 window.addSubview(aView)
